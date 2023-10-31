@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   EffectComposer,
-  DepthOfField,
+  // DepthOfField,
   Bloom,
   ChromaticAberration,
 } from "@react-three/postprocessing";
@@ -23,10 +23,7 @@ import { Rings } from "./Rings";
 function CarShow() {
   return (
     <>
-      <OrbitControls 
-        target={[0, 0.35, 0]}
-        maxPolarAngle={1.45}
-      />
+      <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
 
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
 
