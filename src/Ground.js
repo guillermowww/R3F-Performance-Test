@@ -6,8 +6,8 @@ import { LinearEncoding, RepeatWrapping, TextureLoader } from "three";
 export function Ground() {
   // thanks to https://polyhaven.com/a/rough_plasterbrick_05 !
   const [roughness, normal] = useLoader(TextureLoader, [
-    process.env.PUBLIC_URL + "textures/terrain-roughness.jpg",
-    process.env.PUBLIC_URL + "textures/terrain-normal.jpg",
+    process.env.PUBLIC_URL + "textures512/terrain-roughness.jpg",
+    process.env.PUBLIC_URL + "textures512/terrain-normal.jpg",
   ]);
 
   useEffect(() => {
@@ -38,11 +38,11 @@ export function Ground() {
         dithering={true}
         color={[0.015, 0.015, 0.015]}
         roughness={0.7}
-        blur={[1000, 400]} // Blur ground reflections (width, heigt), 0 skips blur
+        blur={[512, 512]} // Blur ground reflections (width, heigt), 0 skips blur
         mixBlur={30} // How much blur mixes with surface roughness (default = 1)
-        mixStrength={80} // Strength of the reflections
+        mixStrength={10} // Strength of the reflections
         mixContrast={1} // Contrast of the reflections
-        resolution={1024} // Off-buffer resolution, lower=faster, higher=better quality, slower
+        resolution={512} // Off-buffer resolution, lower=faster, higher=better quality, slower
         mirror={0} // Mirror environment, 0 = texture colors, 1 = pick up env colors
         depthScale={0.01} // Scale the depth factor (0 = no depth, default = 0)
         minDepthThreshold={0.9} // Lower edge for the depthTexture interpolation (default = 0)
