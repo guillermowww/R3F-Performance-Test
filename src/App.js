@@ -3,8 +3,8 @@ import { Canvas } from "@react-three/fiber";
 import {
   EffectComposer,
   // DepthOfField,
-  Bloom,
-  ChromaticAberration,
+  //Bloom,
+  //ChromaticAberration,
 } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import {
@@ -29,10 +29,10 @@ function CarShow() {
 
       <color args={[0, 0, 0]} attach="background" />
 
-      <CubeCamera resolution={256} frames={Infinity}>
+      <CubeCamera resolution={128} /*frames={60}*/>
         {(texture) => (
           <>
-            <Environment map={texture} />
+            <Environment map={texture}  />
             <Car />
           </>
         )}
@@ -61,8 +61,8 @@ function CarShow() {
       <Boxes />
       <Rings />
 
-      <EffectComposer>
-        {/* <DepthOfField focusDistance={0.0035} focalLength={0.01} bokehScale={3} height={480} /> */}
+       <EffectComposer>
+         {/* <DepthOfField focusDistance={0.0035} focalLength={0.01} bokehScale={3} height={480} /> 
         <Bloom
           blendFunction={BlendFunction.ADD}
           intensity={1.3} // The bloom intensity.
@@ -72,11 +72,11 @@ function CarShow() {
           luminanceThreshold={0.15} // luminance threshold. Raise this value to mask out darker elements in the scene.
           luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
         />
-        {/* <ChromaticAberration
+        <ChromaticAberration
           blendFunction={BlendFunction.NORMAL} // blend mode
           offset={[0.0005, 0.0012]} // color offset
         /> */}
-      </EffectComposer>
+      </EffectComposer> 
     </>
   );
 }

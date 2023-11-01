@@ -54,7 +54,7 @@ function Box({ color }) {
   return (
     <mesh ref={box} rotation-x={Math.PI * 0.5} scale={scale} /*castShadow*/>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={color} /*envMapIntensity={0.15}*/ />
+      <meshStandardMaterial color={color} envMapIntensity={null} />
     </mesh>
   );
 }

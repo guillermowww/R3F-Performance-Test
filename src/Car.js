@@ -18,8 +18,8 @@ export function Car() {
     gltf.scene.traverse((object) => {
       if (object instanceof Mesh) {
         object.castShadow = true;
-        object.receiveShadow = true;
-        object.material.envMapIntensity = 10;
+        object.receiveShadow = false;
+        object.material.envMapIntensity = 10; // null si lo quiero apagar
       }
     });
   }, [gltf]);
