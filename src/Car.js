@@ -34,6 +34,6 @@ export function Car() {
     group.children[9].rotation.x = t * 2;
   });
   //const noExiste = gltf.scene.children[0].children[0].children();
-  console.log("holita");
+  //console.log("holita");
   return <primitive object={gltf.scene} />;
 }
